@@ -21,4 +21,15 @@ router.post('/', async (req, res) => {
       }
 });
 
+router.get('/', async (req, res) => {
+    try {
+      const birds = await Bird.find({})
+        .populate('author')
+        .sort({ createdAt: 'desc' });
+      res.status(200).json(birds);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+
 module.exports = router;
