@@ -32,4 +32,13 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('/:birdId', async (req, res) => {
+    try {
+      const bird = await Bird.findById(req.params.birdId).populate('author');
+      res.status(200).json(bird);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+
 module.exports = router;
