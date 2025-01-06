@@ -78,4 +78,21 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.post('/:birdId/comments', async (req, res) => {
+    try {
+      req.body.author = req.user._id;
+      const bird = await Bird.findById(req.params.birdId);
+      bird.comments.push(req.body);
+      await bird.save();
+  
+      const newComment = bird.comments[bird.comments.length - 1];
+  
+      newComment._doc.author = req.user;
+  
+      res.status(201).json(newComment);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+
 module.exports = router;
