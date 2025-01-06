@@ -63,4 +63,19 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.delete('/:birdId', async (req, res) => {
+    try {
+      const bird = await Bird.findById(req.params.birdId);
+  
+      if (!bird.author.equals(req.user._id)) {
+        return res.status(403).send("You're not allowed to do that!");
+      }
+  
+      const deletedBird = await Bird.findByIdAndDelete(req.params.birdId);
+      res.status(200).json(deletedBird);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+
 module.exports = router;
