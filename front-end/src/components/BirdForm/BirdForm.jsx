@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as birdService from '../../services/birdService';
+import styles from './BirdForm.module.css'
 
 const BirdForm = (props) => {
 
@@ -35,7 +36,7 @@ const BirdForm = (props) => {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>{birdId ? 'Edit Bird' : 'New Bird'}</h1>
         <label htmlFor="name-input">Name</label>
