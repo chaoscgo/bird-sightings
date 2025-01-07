@@ -45,6 +45,14 @@ const App = () => {
     navigate('/birds');
   };
 
+  const handleUpdateBird = async (birdId, birdFormData) => {
+    const updatedBird = await birdService.update(birdId, birdFormData);
+
+    setBirds(birds.map((bird) => (birdId === bird._id ? updatedBird : bird)));
+
+    navigate(`/birds/${birdId}`);
+  };
+
   return (
     <>
       <AuthedUserContext.Provider value={user}>
@@ -56,6 +64,7 @@ const App = () => {
               <Route path="/birds" element={<BirdList birds={birds} />} />
               <Route path="/birds/:birdId" element={<BirdDetails handleDeleteBird={handleDeleteBird} />} />
               <Route path="/birds/new" element={<BirdForm handleAddBird={handleAddBird} />} />
+              <Route path="/birds/:birdId/edit" element={<BirdForm handleUpdateBird={handleUpdateBird} />} />
             </>
           ) : (
             <Route path="/" element={<Landing />} />

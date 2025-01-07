@@ -67,6 +67,22 @@ const index = async () => {
       console.log(error);
     }
   };
+
+  async function update(birdId, birdFormData) {
+    try {
+      const res = await fetch(`${BASE_URL}/${birdId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(birdFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
   export {
      index,
@@ -74,4 +90,5 @@ const index = async () => {
      create, 
      createComment,
      deleteBird,
+     update,
    };

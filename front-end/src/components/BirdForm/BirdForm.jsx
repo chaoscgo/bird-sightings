@@ -1,6 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import * as birdService from '../../services/birdService';
 
 const BirdForm = (props) => {
+
+  const { birdId } = useParams();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -9,18 +13,31 @@ const BirdForm = (props) => {
     notes: '',
   });
 
+  useEffect(() => {
+    const fetchBird = async () => {
+      const birdData = await birdService.show(birdId);
+      setFormData(birdData);
+    };
+    if (birdId) fetchBird();
+  }, [birdId]);
+
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    props.handleAddBird(formData);
+    if (birdId) {
+        props.handleUpdateBird(birdId, formData);
+      } else {
+        props.handleAddBird(formData);
+      }
   };
 
   return (
     <main>
       <form onSubmit={handleSubmit}>
+        <h1>{birdId ? 'Edit Bird' : 'New Bird'}</h1>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -44,6 +61,7 @@ const BirdForm = (props) => {
           required
           type="date"
           name="date"
+        //   pattern="\d{2}-\d{2}-\d{4}"
           id="date-input"
           value={formData.date}
           onChange={handleChange}

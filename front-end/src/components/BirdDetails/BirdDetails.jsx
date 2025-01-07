@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import * as birdService from '../../services/birdService';
 import CommentForm from '../CommentForm/CommentForm';
+import { Link } from 'react-router-dom';
 
 const BirdDetails = (props) => {
 
@@ -30,17 +31,19 @@ const BirdDetails = (props) => {
           <header>
             <>
               <h1>{bird.name}</h1>
-              {bird.author.username} posted on
+              {bird.author.username} posted on &nbsp;
               {new Date(bird.createdAt).toLocaleDateString()}
             </>
           <p>
-            Spotted this bird at {bird.location} on {bird.date}
+            Spotted this bird at {bird.location} on  {bird.date}
           </p>
           <p>
             Notes: {bird.notes}
           </p>
           {bird.author._id === user._id && (
             <>
+             <Link to={`/birds/${birdId}/edit`}>Edit Bird</Link>
+
              <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
             </>
            )}
