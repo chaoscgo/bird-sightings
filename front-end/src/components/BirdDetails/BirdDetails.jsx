@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import * as birdService from '../../services/birdService';
 import CommentForm from '../CommentForm/CommentForm';
 import { Link } from 'react-router-dom';
+import styles from './BirdDetails.module.css';
 
 const BirdDetails = (props) => {
 
@@ -27,26 +28,31 @@ const BirdDetails = (props) => {
       if (!bird) return <main>Loading...</main>;
 
       return (
-        <main>
+        <main className={styles.container}>
           <header>
-            <>
+
               <h1>{bird.name}</h1>
-              {bird.author.username} posted on &nbsp;
-              {new Date(bird.createdAt).toLocaleDateString()}
-            </>
-          <p>
-            Spotted this bird at {bird.location} on  {bird.date}
-          </p>
-          <p>
-            Notes: {bird.notes}
-          </p>
-          {bird.author._id === user._id && (
-            <>
-             <Link to={`/birds/${birdId}/edit`}>Edit Bird</Link>
-             <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
-            </>
-           )}
+
+              <div>
+                <p>
+                    {bird.author.username} posted on &nbsp;
+                    {new Date(bird.createdAt).toLocaleDateString()}
+
+                    Spotted this bird at {bird.location} on  {bird.date}
+
+                    Notes: {bird.notes}
+                </p>
+
+               {bird.author._id === user._id && (
+                <>
+               <Link to={`/birds/${birdId}/edit`}>Edit Bird</Link>
+               <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
+                </>
+                )}
+              </div>
+
           </header>
+
           <section>
             <h2>Comments</h2>
             <CommentForm handleAddComment={handleAddComment} />
@@ -56,11 +62,12 @@ const BirdDetails = (props) => {
             {bird.comments.map((comment) => (
                 <article key={comment._id}>
                  <header>
-                   <p>
-                    {comment.author.username} posted on
-                    {new Date(comment.createdAt).toLocaleDateString()}
-                  </p>
-
+                    <div>
+                        <p>
+                            {comment.author.username} posted on
+                            {new Date(comment.createdAt).toLocaleDateString()}
+                        </p>
+                    </div>
                  </header>
                    <p>{comment.text}</p>
                </article>
