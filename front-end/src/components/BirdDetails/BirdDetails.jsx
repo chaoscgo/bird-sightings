@@ -5,6 +5,7 @@ import * as birdService from '../../services/birdService';
 import CommentForm from '../CommentForm/CommentForm';
 import { Link } from 'react-router-dom';
 import styles from './BirdDetails.module.css';
+import Loading from '../Loading/Loading';
 
 const BirdDetails = (props) => {
 
@@ -25,7 +26,7 @@ const BirdDetails = (props) => {
         setBird({ ...bird, comments: [...bird.comments, newComment] });
       };
 
-      if (!bird) return <main>Loading...</main>;
+      if (!bird) return <Loading />;
 
       return (
         <main className={styles.container}>
