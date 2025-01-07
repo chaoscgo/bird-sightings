@@ -11,24 +11,21 @@ const BirdDetails = (props) => {
     useEffect(() => {
         const fetchBird = async () => {
           const birdData = await birdService.show(birdId);
-          console.log('birdData', birdData);
           setBird(birdData);
         };
         fetchBird();
       }, [birdId]);
-      
-      console.log('bird state:', bird);
 
       if (!bird) return <main>Loading...</main>;
 
       return (
         <main>
           <header>
-            <p>
+            <>
               <h1>{bird.name}</h1>
               {bird.author.username} posted on
               {new Date(bird.createdAt).toLocaleDateString()}
-            </p>
+            </>
           </header>
           <p>
             Spotted this bird at {bird.location} on {bird.date}
