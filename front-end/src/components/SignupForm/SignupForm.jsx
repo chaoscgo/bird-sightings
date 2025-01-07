@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as authService from '../../services/authService';
+import Hawk from '../../assets/images/hawk-1853120_640.jpg';
+import styles from './SignupForm.module.css';
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
@@ -37,10 +39,14 @@ const SignupForm = (props) => {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
+      <section>
+        <img src={Hawk} alt="A hawk sitting on a pole" />
+      </section>
+      <section>
+      <form onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
       <p>{message}</p>
-      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -78,6 +84,7 @@ const SignupForm = (props) => {
           </Link>
         </div>
       </form>
+      </section>
     </main>
   );
 };
