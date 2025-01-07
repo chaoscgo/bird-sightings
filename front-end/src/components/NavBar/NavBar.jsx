@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import styles from './NavBar.module.css';
 import Hawk from '../../assets/images/hawk-1853120_640.jpg';
 
+
 const NavBar = ({ handleSignout }) => {
   const user = useContext(AuthedUserContext);
   return (
