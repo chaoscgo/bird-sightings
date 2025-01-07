@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import styles from './BirdList.module.css';
 
 const BirdList = (props) => {
     return (
-        <main>
+        <main className={styles.container}>
            {props.birds.map((bird) => (
              <Link key={bird._id} to={`/birds/${bird._id}`}>
                 <article>
