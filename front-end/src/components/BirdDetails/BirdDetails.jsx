@@ -1,11 +1,13 @@
+import { AuthedUserContext } from '../../App';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import * as birdService from '../../services/birdService';
 import CommentForm from '../CommentForm/CommentForm';
 
 const BirdDetails = (props) => {
 
     const [bird, setBird] = useState(null);
+    const user = useContext(AuthedUserContext);
     const { birdId } = useParams();
 
     useEffect(() => {
@@ -31,13 +33,18 @@ const BirdDetails = (props) => {
               {bird.author.username} posted on
               {new Date(bird.createdAt).toLocaleDateString()}
             </>
-          </header>
           <p>
             Spotted this bird at {bird.location} on {bird.date}
           </p>
           <p>
             Notes: {bird.notes}
           </p>
+          {bird.author._id === user._id && (
+            <>
+             <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
+            </>
+           )}
+          </header>
           <section>
             <h2>Comments</h2>
             <CommentForm handleAddComment={handleAddComment} />

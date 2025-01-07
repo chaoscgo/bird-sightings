@@ -20,12 +20,6 @@ const App = () => {
 
   const navigate = useNavigate();
 
-  const handleAddBird = async (birdFormData) => {
-    const newBird = await birdService.create(birdFormData);
-    setBirds([newBird, ...birds]);
-    navigate('/birds');
-  };
-
   useEffect(() => {
     const fetchAllBirds = async () => {
       const birdsData = await birdService.index();
@@ -39,6 +33,18 @@ const App = () => {
     setUser(null);
   };
 
+  const handleAddBird = async (birdFormData) => {
+    const newBird = await birdService.create(birdFormData);
+    setBirds([newBird, ...birds]);
+    navigate('/birds');
+  };
+
+  const handleDeleteBird = async (birdId) => {
+    const deletedBird = await birdService.deleteBird(birdId);
+    setBirds(birds.filter((bird) => bird._id !== deletedBird._id));
+    navigate('/birds');
+  };
+
   return (
     <>
       <AuthedUserContext.Provider value={user}>
@@ -48,7 +54,7 @@ const App = () => {
             <>
               <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/birds" element={<BirdList birds={birds} />} />
-              <Route path="/birds/:birdId" element={<BirdDetails />} />
+              <Route path="/birds/:birdId" element={<BirdDetails handleDeleteBird={handleDeleteBird} />} />
               <Route path="/birds/new" element={<BirdForm handleAddBird={handleAddBird} />} />
             </>
           ) : (
