@@ -8,6 +8,7 @@ import SigninForm from './components/SigninForm/SigninForm';
 import * as authService from '../src/services/authService'; 
 import BirdList from './components/BirdList/BirdList';
 import * as birdService from './services/birdService';
+import BirdDetails from './components/BirdDetails/BirdDetails';
 
 export const AuthedUserContext = createContext(null);
 
@@ -38,6 +39,7 @@ const App = () => {
             <>
               <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/birds" element={<BirdList birds={birds} />} />
+              <Route path="/birds/:birdId" element={<BirdDetails />} />
             </>
           ) : (
             <Route path="/" element={<Landing />} />
