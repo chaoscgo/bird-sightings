@@ -6,6 +6,7 @@ import CommentForm from '../CommentForm/CommentForm';
 import { Link } from 'react-router-dom';
 import styles from './BirdDetails.module.css';
 import Loading from '../Loading/Loading';
+import Icon from '../Icon/Icon';
 
 const BirdDetails = (props) => {
 
@@ -46,8 +47,14 @@ const BirdDetails = (props) => {
 
                {bird.author._id === user._id && (
                 <>
-               <Link to={`/birds/${birdId}/edit`}>Edit Bird</Link>
-               <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
+               <Link to={`/birds/${birdId}/edit`}>
+                 <Icon category="Edit" />
+                   Edit Bird
+                </Link>
+               <button onClick={() => props.handleDeleteBird(birdId)}>
+                  <Icon category="Trash" />
+                  Delete Bird
+                </button>
                 </>
                 )}
               </div>
