@@ -43,7 +43,6 @@ const BirdDetails = (props) => {
           {bird.author._id === user._id && (
             <>
              <Link to={`/birds/${birdId}/edit`}>Edit Bird</Link>
-
              <button onClick={() => props.handleDeleteBird(birdId)}>Delete Bird</button>
             </>
            )}
@@ -61,6 +60,7 @@ const BirdDetails = (props) => {
                     {comment.author.username} posted on
                     {new Date(comment.createdAt).toLocaleDateString()}
                   </p>
+
                  </header>
                    <p>{comment.text}</p>
                </article>
