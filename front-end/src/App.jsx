@@ -60,7 +60,7 @@ const App = () => {
         <Routes>
           {user ? (
             <>
-              <Route path="/" element={<Landing />} />
+              <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/birds" element={<BirdList birds={birds} />} />
               <Route path="/birds/:birdId" element={<BirdDetails handleDeleteBird={handleDeleteBird} />} />
               <Route path="/birds/new" element={<BirdForm handleAddBird={handleAddBird} />} />

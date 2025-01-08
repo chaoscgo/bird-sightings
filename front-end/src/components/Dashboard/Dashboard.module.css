@@ -67,13 +67,7 @@
     font-weight: 600;
   }
   
- h1 {
-    margin: 5px;
-    font-size: 36px;
-    color: black;
-    letter-spacing: 2px;
-  }
-  .container section > header h2 {
+  .container section > header h1 {
     margin: 5px;
     font-size: 36px;
     letter-spacing: 2px;

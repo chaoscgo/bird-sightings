@@ -4,9 +4,8 @@ import { useParams } from 'react-router-dom';
 import * as birdService from '../../services/birdService';
 import CommentForm from '../CommentForm/CommentForm';
 import { Link } from 'react-router-dom';
-import styles from './BirdDetails.module.css';
 import Loading from '../Loading/Loading';
-import Icon from '../Icon/Icon';
+import styles from './BirdDetails.module.css';
 
 const BirdDetails = (props) => {
 
@@ -31,7 +30,7 @@ const BirdDetails = (props) => {
 
       return (
         <main className={styles.container}>
-          <header>
+          <header className={styles.header}>
 
               <h1>{bird.name}</h1>
 
@@ -39,20 +38,20 @@ const BirdDetails = (props) => {
                 <p>
                     {bird.author.username} posted on &nbsp;
                     {new Date(bird.createdAt).toLocaleDateString()}
-
-                    Spotted this bird at {bird.location} on  {bird.date}
-
+                    <br></br>
+                    <br></br>
+                    Spotted this bird at {bird.location} on {new Date(bird.date).toLocaleDateString()}
+                    <br></br>
+                    <br></br>
                     Notes: {bird.notes}
                 </p>
 
                {bird.author._id === user._id && (
                 <>
                <Link to={`/birds/${birdId}/edit`}>
-                 <Icon category="Edit" />
                    Edit Bird
                 </Link>
                <button onClick={() => props.handleDeleteBird(birdId)}>
-                  <Icon category="Trash" />
                   Delete Bird
                 </button>
                 </>

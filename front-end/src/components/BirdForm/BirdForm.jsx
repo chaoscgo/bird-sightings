@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as birdService from '../../services/birdService';
-import styles from './BirdForm.module.css'
+import styles from './BirdForm.module.css';
+import { format } from "date-fns";
+import moment from "moment";
 
 const BirdForm = (props) => {
 
@@ -23,6 +25,7 @@ const BirdForm = (props) => {
   }, [birdId]);
 
   const handleChange = (evt) => {
+    console.log(evt.target.value);
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
 
@@ -38,7 +41,7 @@ const BirdForm = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <h1>{birdId ? 'Edit Bird' : 'New Bird'}</h1>
+        <h1>{birdId ? 'Edit Bird' : 'What new bird did you see?'}</h1>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -62,9 +65,8 @@ const BirdForm = (props) => {
           required
           type="date"
           name="date"
-        //   pattern="\d{2}-\d{2}-\d{4}"
           id="date-input"
-          value={formData.date}
+          value = {moment(new Date(formData.date), "YYYY-MM-DDTHH").format("YYYY-MM-DD")}
           onChange={handleChange}
         />
         <label htmlFor="notes-input">Notes</label>

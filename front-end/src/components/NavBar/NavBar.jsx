@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
 import styles from './NavBar.module.css';
-import Hawk from '../../assets/images/hawk-1853120_640.jpg';
-
 
 const NavBar = ({ handleSignout }) => {
   const user = useContext(AuthedUserContext);
@@ -11,7 +9,6 @@ const NavBar = ({ handleSignout }) => {
     <>
       {user ? (
         <nav className={styles.container}>
-           <Link to='/'><img src={Hawk} alt="A majestic hawk" /></Link>
          <ul>
             <li><Link to='/'>HOME</Link></li>
             <li><Link to='/birds'>BIRD SIGHTINGS</Link></li>
@@ -21,7 +18,7 @@ const NavBar = ({ handleSignout }) => {
          </ul>
         </nav>
       ) : (
-        <nav>
+        <nav className={styles.container}>
           <ul>
             <li>
               <Link to="/signin">Sign In</Link>

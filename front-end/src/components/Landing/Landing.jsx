@@ -1,29 +1,29 @@
-// src/components/Landing/Landing.jsx
-
 import styles from './Landing.module.css';
-import Hawk from '../../assets/images/hawk-1853120_640.jpg';
+import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 import Stars from '../../assets/images/stars.svg';
-import Logotype from '../../assets/images/logotype.svg';
 
 const Landing = () => {
   return (
     <>
       <main className={styles.container}>
+        <section>
+        <h1>Welcome to the Bird Sightings App!</h1>
+        </section>
         <section className={styles.splash}>
-          <img src={Hawk} alt="A majestic hawk" />
+          <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" />
         </section>
 
         <section className={styles.about}>
           <header>
             <h3>WHO WE ARE</h3>
-            <h1>ABOUT US</h1>
+            <h2>ABOUT US</h2>
           </header>
           <article>
             <p>
               Have you ever wished you had somewhere to keep track of all of those 
               cool birds you see when you're out and about?  You know, when you write
-              down on a napkin that you saw a Yellow Bellied Sap Sucker when out 
-              walking the dog?  Then you get home and that napkin gets lost somewher?
+              down on a napkin that you saw a Yellow-Bellied Sapsucker when out 
+              walking the dog?  Then you get home and that napkin gets lost somewhere?
               Well, now you can keep track of all your bird sighting in one place. No 
               wondering what it was you saw or where you saw it or even when!  Also,
               you can peruse the bird sightings of all of your fellow birders and leave 

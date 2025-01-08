@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import * as birdService from '../../services/birdService';
-import styles from './CommentForm.module.css';
-import Icon from '../Icon/Icon';
 
 const CommentForm = (props) => {
   const [formData, setFormData] = useState({ text: '' });
@@ -28,7 +26,6 @@ const CommentForm = (props) => {
         onChange={handleChange}
       />
       <button type="submit">
-        <Icon category="Create" />
         SUBMIT COMMENT
       </button>
     </form>

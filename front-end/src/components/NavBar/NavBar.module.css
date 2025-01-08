@@ -8,7 +8,7 @@
     position: fixed; 
     padding: 14px 21px;
     align-items: center;
-    background: white;
+    background: rgb(162, 224, 248);
     border-bottom: 1px solid rgb(200, 200, 200);
   }
   
@@ -21,9 +21,10 @@
     width: 100%;
     display: flex;
     list-style: none;
+    font-size: 20px;
     font-weight: bold;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   
   .container li {
