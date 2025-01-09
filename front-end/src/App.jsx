@@ -33,8 +33,6 @@ const App = () => {
   };
 
   const handleAddBird = async (birdFormData) => {
-    let bird:
-     name.value = '';
     const newBird = await birdService.create(birdFormData);
     setBirds([newBird, ...birds]);
     navigate('/birds');
