@@ -11,7 +11,16 @@
   
   .container img {
     width: 85%;
+    height: 350px;
     max-width: 500px;
+  }
+
+  .container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px 50px 300px;
   }
   
   .container section {
@@ -22,23 +31,11 @@
     margin: 10px;
     align-items: center;
     flex-direction: column;
-  }
-
-  form h1 {
-    color: navy;
-    padding: 20px 0px 0px 0px;
+    /* justify-content: center; */
   }
   
   .container section:first-child {
-    height: 100%;
-    align-items: center;
-    justify-content: center;
     background-color: #fdfeff;
-  }
-  
-  .container section:nth-child(2) {
-    /* overflow: scroll; */
-    justify-content: center;
   }
   
   .container input {
@@ -47,7 +44,7 @@
   
   .container input,
   button {
-    width: 100%;
+    width: 400px;
     padding: 14px;
     font-size: 14px;
     border-radius: 5px;
@@ -75,7 +72,7 @@
   
   .container a {
     border: none;
-    width: 200px;
+    width: 400px;
     font-size: 14px;
     background: none;
     font-weight: 500;
@@ -92,18 +89,13 @@
   @media only screen and (max-width: 912px) {
     .container section {
       width: 100%;
+      justify-content: flex-start;
     }
     .container section:first-child {
       display: none;
     }
     .container form {
       min-width: 100%;
-    }
-  }
-  
-  @media only screen and (max-height: 900px) {
-    .container section:nth-child(2) {
-      justify-content: flex-start;
     }
   }
   

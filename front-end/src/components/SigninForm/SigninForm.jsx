@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as authService from '../../services/authService';
 import Hawk from '../../assets/images/hawk-1853120_640.jpg';
-import styles from './SigninForm.module.css';
+import './SigninForm.css';
 
 const SigninForm = (props) => {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const SigninForm = (props) => {
   };
 
   return (
-    <main className={styles.container}>
+    <main className="container">
     <section>
      <img src={Hawk} alt="A hawk sitting on a pole" />
     </section>

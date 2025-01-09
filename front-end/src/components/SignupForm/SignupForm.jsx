@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as authService from '../../services/authService';
 import Hawk from '../../assets/images/hawk-1853120_640.jpg';
-import styles from './SignupForm.module.css';
+import './SignupForm.css';
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const SignupForm = (props) => {
   };
 
   return (
-    <main className={styles.container}>
+    <main className="container">
       <section>
         <img src={Hawk} alt="A hawk sitting on a pole" />
       </section>
@@ -49,7 +49,7 @@ const SignupForm = (props) => {
       <p>{message}</p>
         <div>
           <label htmlFor="username">Username:</label>
-          <input
+          <input 
             type="text"
             id="name"
             value={username}
