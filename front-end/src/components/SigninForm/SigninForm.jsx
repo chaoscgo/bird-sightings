@@ -25,55 +25,54 @@ const SigninForm = (props) => {
     e.preventDefault();
     try {
       const user = await authService.signin(formData);
-      console.log(user);
       props.setUser(user);
       navigate('/');
     } catch (err) {
       updateMessage(err.message);
-    }
+    };
   };
 
   return (
     <main className="container">
-    <section>
-      <div>
-     <img src={Hawk} alt="A hawk sitting on a pole" />
-     <p>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
-     </div>
-    </section>
-    <section>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <h1>Sign In</h1>
-        <p>{message}</p>
+      <section>
         <div>
-          <label htmlFor="email">Username:</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="username"
-            value={formData.username}
-            name="username"
-            onChange={handleChange}
-          />
+          <img src={Hawk} alt="A hawk sitting on a pole" />
+          <p>Background image designed by <a className="attribution" href="https://pixabay.com">Pixabay</a></p>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={formData.password}
-            name="password"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button>Sign In</button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
-        </div>
-      </form>
+      </section>
+      <section>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <h1>Sign In</h1>
+          <p>{message}</p>
+          <div>
+            <label htmlFor="email">Username:</label>
+            <input
+              type="text"
+              autoComplete="off"
+              id="username"
+              value={formData.username}
+              name="username"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              autoComplete="off"
+              id="password"
+              value={formData.password}
+              name="password"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <button>Sign In</button>
+            <Link to="/">
+              <button>Cancel</button>
+            </Link>
+          </div>
+        </form>
       </section>
     </main>
   );

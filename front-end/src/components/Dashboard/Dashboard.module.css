@@ -6,68 +6,67 @@
     background-image: url("../../assets/images/mountains-8292685_1280.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
   
-  .container section {
+.container section {
     padding: 0px 22px;
-  }
+}
   
-  .container > section {
+.container > section {
     width: 150%;
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
+}
   
-  .about {
+.about {
     height: 81vh;
     width: 100%;
-  }
+}
 
-  .about h1 {
+.about h1 {
     color:navy;
     background-color: white;
-  }
+}
 
-  .about p {
+.about p {
     color: white;
     background-color: navy;
-  }
-
+    padding: 15px;
+}
   
-  @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .about {
       height: 420px;
     }
-  }
+}
   
-  @media only screen and (max-width: 912px) {
+@media only screen and (max-width: 912px) {
     .about {
       height: 460px;
     }
-  }
+}
   
-  @media only screen and (max-width: 540px) {
+@media only screen and (max-width: 540px) {
     .about {
       height: 560px;
     }
-  }
+}
   
-  @media only screen and (max-width: 414px) {
+@media only screen and (max-width: 414px) {
     .about {
       height: 660px;
     }
     .container section > img {
       min-width: 340px;
     }
-  }
+}
   
-  @media only screen and (max-width: 300px) {
+@media only screen and (max-width: 300px) {
     .about {
       height: 800px;
     }
     .container section > img {
       min-width: 340px;
     }
-  }
-  
+}  

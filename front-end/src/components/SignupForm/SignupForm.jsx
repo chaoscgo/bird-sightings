@@ -41,52 +41,52 @@ const SignupForm = (props) => {
   return (
     <main className="container">
       <section>
-          <div>
-             <img src={Hawk} alt="A hawk sitting on a pole" />
-             <p>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
-             </div>
+        <div>
+          <img src={Hawk} alt="A hawk sitting on a pole" />
+          <p>Background image designed by <a className="attribution" href="https://pixabay.com">Pixabay</a></p>
+        </div>
       </section>
       <section>
-      <form onSubmit={handleSubmit}>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input 
-            type="text"
-            id="name"
-            value={username}
-            name="username"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="confirm">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirm"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button disabled={isFormInvalid()}>Sign Up</button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
-        </div>
-      </form>
+       <form onSubmit={handleSubmit}>
+         <h1>Sign Up</h1>
+         <p>{message}</p>
+         <div>
+           <label htmlFor="username">Username:</label>
+           <input 
+             type="text"
+             id="name"
+             value={username}
+             name="username"
+             onChange={handleChange}
+           />
+         </div>
+         <div>
+           <label htmlFor="password">Password:</label>
+           <input
+             type="password"
+             id="password"
+             value={password}
+             name="password"
+             onChange={handleChange}
+           />
+         </div>
+         <div>
+           <label htmlFor="confirm">Confirm Password:</label>
+           <input
+             type="password"
+             id="confirm"
+             value={passwordConf}
+             name="passwordConf"
+             onChange={handleChange}
+           />
+         </div>
+         <div>
+           <button disabled={isFormInvalid()}>Sign Up</button>
+           <Link to="/">
+             <button>Cancel</button>
+           </Link>
+         </div>
+       </form>
       </section>
     </main>
   );

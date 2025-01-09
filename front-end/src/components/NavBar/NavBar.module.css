@@ -10,13 +10,13 @@
     align-items: center;
     background: rgb(162, 224, 248);
     border-bottom: 1px solid rgb(200, 200, 200);
-  }
+}
   
-  .container img {
+.container img {
     width: 100%;
-  }
+}
   
-  .container ul {
+.container ul {
     margin: 0;
     width: 100%;
     display: flex;
@@ -25,19 +25,18 @@
     font-weight: bold;
     align-items: center;
     justify-content: flex-start;
-  }
+}
   
-  .container li {
+.container li {
     margin-left: 35px;
     text-align: left;
-  }
+}
   
-  @media only screen and (max-width: 414px) {
+@media only screen and (max-width: 414px) {
     .container ul {
       padding-left: 0px;
     }
     .container li {
       font-size: 15px;
     }
-  }
-  
+} 

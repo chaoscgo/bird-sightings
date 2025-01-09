@@ -16,6 +16,7 @@ const birdSchema = new mongoose.Schema(
       name: {
         type: String,
         required: true,
+        value: '',
       },
       location: {
         type: String,

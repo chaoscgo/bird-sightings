@@ -15,7 +15,6 @@ export const AuthedUserContext = createContext(null);
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
-
   const [birds, setBirds] = useState([]);
 
   const navigate = useNavigate();
@@ -34,6 +33,8 @@ const App = () => {
   };
 
   const handleAddBird = async (birdFormData) => {
+    let bird:
+     name.value = '';
     const newBird = await birdService.create(birdFormData);
     setBirds([newBird, ...birds]);
     navigate('/birds');
@@ -47,9 +48,7 @@ const App = () => {
 
   const handleUpdateBird = async (birdId, birdFormData) => {
     const updatedBird = await birdService.update(birdId, birdFormData);
-
     setBirds(birds.map((bird) => (birdId === bird._id ? updatedBird : bird)));
-
     navigate(`/birds/${birdId}`);
   };
 
@@ -67,10 +66,10 @@ const App = () => {
               <Route path="/birds/:birdId/edit" element={<BirdForm handleUpdateBird={handleUpdateBird} />} />
             </>
           ) : (
-            <Route path="/" element={<Landing />} />
+              <Route path="/" element={<Landing />} />
           )}
-          <Route path="/signup" element={<SignupForm setUser={setUser} />} />
-          <Route path="/signin" element={<SigninForm setUser={setUser} />} />
+              <Route path="/signup" element={<SignupForm setUser={setUser} />} />
+              <Route path="/signin" element={<SigninForm setUser={setUser} />} />
         </Routes>
       </AuthedUserContext.Provider>
     </>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import * as birdService from '../../services/birdService';
 import styles from './CommentForm.module.css';
 
 const CommentForm = (props) => {
@@ -17,20 +16,20 @@ const CommentForm = (props) => {
 
   return (
     <main className={styles.container}>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="text-input">Your comment:</label>
-      <textarea className={styles.textbox}
-        required
-        type="text"
-        name="text"
-        id="text-input"
-        value={formData.text}
-        onChange={handleChange}
-      />
-      <button type="submit">
-        SUBMIT COMMENT
-      </button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="text-input">Your comment:</label>
+        <textarea className={styles.textbox}
+          required
+          type="text"
+          name="text"
+          id="text-input"
+          value={formData.text}
+          onChange={handleChange}
+        />
+        <button type="submit">
+          SUBMIT COMMENT
+        </button>
+      </form>
     </main>
   );
 };
