@@ -36,7 +36,10 @@ const SigninForm = (props) => {
   return (
     <main className="container">
     <section>
+      <div>
      <img src={Hawk} alt="A hawk sitting on a pole" />
+     <p>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
+     </div>
     </section>
     <section>
       <form autoComplete="off" onSubmit={handleSubmit}>

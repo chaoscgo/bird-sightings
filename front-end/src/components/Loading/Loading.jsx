@@ -5,7 +5,10 @@ import Hawk from '../../assets/images/hawk-1853120_640.jpg';
 const Loading = () => {
   return (
     <main className={styles.container}>
-       <img src={Hawk} alt="A hawk sitting on a pole" />
+         <div>
+            <img src={Hawk} alt="A hawk sitting on a pole" />
+            <p>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
+            </div>
     </main>
   )
 }

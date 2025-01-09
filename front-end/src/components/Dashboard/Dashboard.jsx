@@ -1,11 +1,11 @@
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
 import styles from './Dashboard.module.css';
-import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 
 const Dashboard = ({}) => {
   const user = useContext(AuthedUserContext);
   return (
+    <>
      <main className={styles.container}>
        <section className={styles.about}>
          <h1>Welcome back, {user.username}!</h1>
@@ -15,6 +15,8 @@ const Dashboard = ({}) => {
          </p>
       </section>
     </main>
+        <footer>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></footer>
+        </>
   );
 };
 

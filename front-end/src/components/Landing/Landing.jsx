@@ -1,5 +1,4 @@
 import styles from './Landing.module.css';
-// import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 import Stars from '../../assets/images/stars.svg';
 
 const Landing = () => {
@@ -9,7 +8,6 @@ const Landing = () => {
         
         <section className={styles.splash}>
           <h1>Welcome to the Bird Sightings App!</h1>
-          {/* <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" /> */}
         </section>
 
         <section className={styles.about}>
@@ -51,7 +49,7 @@ const Landing = () => {
           </article>
         </section>
       </main>
-
+      <footer>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></footer>
       <footer className={styles.footer}>
         © 2025 BIRD SIGHTINGS-ALL RIGHTS RESERVED
       </footer>

@@ -41,7 +41,10 @@ const SignupForm = (props) => {
   return (
     <main className="container">
       <section>
-        <img src={Hawk} alt="A hawk sitting on a pole" />
+          <div>
+             <img src={Hawk} alt="A hawk sitting on a pole" />
+             <p>Background image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
+             </div>
       </section>
       <section>
       <form onSubmit={handleSubmit}>

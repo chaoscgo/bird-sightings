@@ -5,7 +5,10 @@ import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 const BirdList = (props) => {
     return (
         <>
+        <div>
         <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" />
+        <p>Image designed by <a class="attribution" href="https://pixabay.com">Pixabay</a></p>
+        </div>
         <h1>Bird Sightings:</h1>
   
         <main className={styles.container}>
