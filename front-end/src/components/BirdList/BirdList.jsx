@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './BirdList.module.css';
+import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 
 const BirdList = (props) => {
     return (
+        <>
+        <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" />
+        <h1>Bird Sightings:</h1>
+  
         <main className={styles.container}>
            {props.birds.map((bird) => (
              <Link key={bird._id} to={`/birds/${bird._id}`}>
@@ -10,7 +15,7 @@ const BirdList = (props) => {
                  <header className={styles.header}>
                      <h2>{bird.name}</h2>
                      <p>
-                        {bird.author.username} posted on 
+                        {bird.author.username} posted on&nbsp;
                         {new Date(bird.createdAt).toLocaleDateString()}
                      </p>
                  </header>
@@ -18,6 +23,7 @@ const BirdList = (props) => {
              </Link>
     ))}
         </main>
+    </>
       );
   };
   

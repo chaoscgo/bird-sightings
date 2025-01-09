@@ -4,6 +4,7 @@ import * as birdService from '../../services/birdService';
 import styles from './BirdForm.module.css';
 import { format } from "date-fns";
 import moment from "moment";
+import QuestionBird from '../../assets/images/questionbird.jpg';
 
 const BirdForm = (props) => {
 
@@ -39,11 +40,14 @@ const BirdForm = (props) => {
   };
 
   return (
+    <>
+    <h1>{birdId ? 'Edit Bird' : 'What new bird did you see?'}</h1>
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <h1>{birdId ? 'Edit Bird' : 'What new bird did you see?'}</h1>
+        <img className={styles.questionbird} src={QuestionBird} alt="A cartoon bird next to a question mark" />
+        <section className={styles.secform}>
         <label htmlFor="name-input">Name</label>
-        <input
+        <input className={styles.textinputname}
           required
           type="text"
           name="name"
@@ -52,7 +56,7 @@ const BirdForm = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="location-input">Location</label>
-        <input
+        <input className={styles.textinputloc}
           required
           type="text"
           name="location"
@@ -70,16 +74,18 @@ const BirdForm = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="notes-input">Notes</label>
-        <textarea
+        <textarea className={styles.textnotes}
           type="text"
           name="notes"
           id="notes-input"
           value={formData.notes}
           onChange={handleChange}
         />
+        </section>
         <button type="submit">SUBMIT</button>
       </form>
     </main>
+ </>   
   );
 };
 

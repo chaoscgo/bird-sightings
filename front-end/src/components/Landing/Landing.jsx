@@ -1,31 +1,29 @@
 import styles from './Landing.module.css';
-import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
+// import SkyBirds from '../../assets/images/nature-2746726_640.jpg';
 import Stars from '../../assets/images/stars.svg';
 
 const Landing = () => {
   return (
     <>
       <main className={styles.container}>
-        <section>
-        <h1>Welcome to the Bird Sightings App!</h1>
-        </section>
+        
         <section className={styles.splash}>
-          <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" />
+          <h1>Welcome to the Bird Sightings App!</h1>
+          {/* <img src={SkyBirds} alt="Birds flying silhouetted against a sunset" /> */}
         </section>
 
         <section className={styles.about}>
           <header>
-            <h3>WHO WE ARE</h3>
             <h2>ABOUT US</h2>
           </header>
           <article>
             <p>
               Have you ever wished you had somewhere to keep track of all of those 
               cool birds you see when you're out and about?  You know, when you write
-              down on a napkin that you saw a Yellow-Bellied Sapsucker when out 
+              down on a napkin that you saw a Yellow-Bellied Sapsucker out 
               walking the dog?  Then you get home and that napkin gets lost somewhere?
-              Well, now you can keep track of all your bird sighting in one place. No 
-              wondering what it was you saw or where you saw it or even when!  Also,
+              Well, now you can keep track of all your bird sightings in one place. No 
+              more wondering what it was you saw or where you saw it or even when!  Also,
               you can peruse the bird sightings of all of your fellow birders and leave 
               comments, etc.  How cool is that?
             </p>
@@ -34,8 +32,7 @@ const Landing = () => {
 
         <section className={styles.testimonial}>
           <header>
-            <h3>BIRDING IS AWESOME</h3>
-            <h1>TESTIMONIALS</h1>
+            <h2>TESTIMONIALS</h2>
           </header>
           <article>
             <header>

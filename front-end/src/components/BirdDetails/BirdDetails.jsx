@@ -31,19 +31,20 @@ const BirdDetails = (props) => {
       return (
         <main className={styles.container}>
           <header className={styles.header}>
-
-              <h1>{bird.name}</h1>
-
+            <br></br>
+            <br></br>
+            <br></br>
+          <h1><u>{bird.name}</u></h1>
               <div>
-                <p>
-                    {bird.author.username} posted on &nbsp;
-                    {new Date(bird.createdAt).toLocaleDateString()}
+                <p className={styles.post}>
+                    User named {bird.author.username} posted on&nbsp;
+                    {new Date(bird.createdAt).toLocaleDateString()}:
                     <br></br>
                     <br></br>
-                    Spotted this bird at {bird.location} on {new Date(bird.date).toLocaleDateString()}
+                    <strong>I spotted this bird in {bird.location} on {new Date(bird.date).toLocaleDateString()}.</strong>
                     <br></br>
                     <br></br>
-                    Notes: {bird.notes}
+                    <strong>Notes: <i>{bird.notes}</i></strong>
                 </p>
 
                {bird.author._id === user._id && (
@@ -60,23 +61,27 @@ const BirdDetails = (props) => {
 
           </header>
 
-          <section>
+          <section className={styles.comsec}>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <h2>Comments</h2>
             <CommentForm handleAddComment={handleAddComment} />
 
             {!bird.comments.length && <p>There are no comments.</p>}
 
             {bird.comments.map((comment) => (
-                <article key={comment._id}>
-                 <header>
-                    <div>
-                        <p>
+                <article key={comment._id} className={styles.artsec}>
+                 <header className={styles.header2}>
+                    <div className={styles.divcom}>
+                        <p className={styles.comment}>
                             {comment.author.username} posted on
                             {new Date(comment.createdAt).toLocaleDateString()}
+                            <p>{comment.text}</p>
                         </p>
                     </div>
                  </header>
-                   <p>{comment.text}</p>
                </article>
             ))}
           </section>

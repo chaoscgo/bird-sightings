@@ -1,16 +1,69 @@
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: left;
+    width: 100%;
+    margin: 100px;
+    padding: 50px;
+    border-right: 5px solid black;
 }
 
-p {
+.header2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 50px;
+        padding: 5px;
+}
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 }
+
+section h2 {
+    color: navy;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 3px solid black; */
+    /* border-radius: 5px; */
+}
+.comsec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+}
+
+.artsec {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+}
+
+.divcom {
+    display: flex;
+    flex-direction: row;
+}
+
+.comment {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+

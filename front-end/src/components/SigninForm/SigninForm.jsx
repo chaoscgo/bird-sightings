@@ -40,7 +40,7 @@ const SigninForm = (props) => {
     </section>
     <section>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <h1>Log In</h1>
+        <h1>Sign In</h1>
         <p>{message}</p>
         <div>
           <label htmlFor="email">Username:</label>
@@ -65,7 +65,7 @@ const SigninForm = (props) => {
           />
         </div>
         <div>
-          <button>Log In</button>
+          <button>Sign In</button>
           <Link to="/">
             <button>Cancel</button>
           </Link>

@@ -10,7 +10,7 @@
   }
   
   .container img {
-    width: 65%;
+    width: 85%;
     max-width: 500px;
   }
   
@@ -19,8 +19,14 @@
     height: 100%;
     display: flex;
     padding: 28px 21px;
+    margin: 10px;
     align-items: center;
     flex-direction: column;
+  }
+
+  form h1 {
+    color: navy;
+    padding: 20px 0px 0px 0px;
   }
   
   .container section:first-child {
@@ -31,7 +37,7 @@
   }
   
   .container section:nth-child(2) {
-    overflow: scroll;
+    /* overflow: scroll; */
     justify-content: center;
   }
   
@@ -52,6 +58,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   
   .container label {
@@ -68,6 +75,7 @@
   
   .container a {
     border: none;
+    width: 200px;
     font-size: 14px;
     background: none;
     font-weight: 500;

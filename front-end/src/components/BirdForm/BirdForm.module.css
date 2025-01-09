@@ -6,16 +6,42 @@
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    padding: 5px;
-    margin: 5px;
+    padding: 15px;
+    margin: 1px;
 }
 
 button {
     margin: 30px;
-    width: 50%;
+    width: 25%;
     background-color: pink;
     color: navy;
     border: 15px solid black;
+}
+
+.textinputname {
+    width:250px;
+    height: 25px;
+}
+
+.textinputloc {
+    width: 250px;
+    height: 50px;
+}
+
+.textnotes {
+    height: 50px;
+    width: 250px;
+}
+
+.secform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.questionbird {
+    height: 250px;
+    margin: 0px;
 }
