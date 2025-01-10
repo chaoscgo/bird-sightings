@@ -78,6 +78,7 @@ const BirdDetails = (props) => {
                 <p className={styles.comment}>
                   {comment.author.username} posted on
                   {new Date(comment.createdAt).toLocaleDateString()}
+                  <br></br>
                   {comment.text}
                 </p>
               </div>
